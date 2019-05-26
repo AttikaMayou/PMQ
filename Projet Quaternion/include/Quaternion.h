@@ -7,6 +7,10 @@ class Quaternion
     public:
         Quaternion();
         virtual ~Quaternion();
+
+        Quaternion& operator+(Quaternion q2);
+        Quaternion& operator*(Quaternion q2);
+        Quaternion& operator*(float a);
     protected:
     private:
         float x;
