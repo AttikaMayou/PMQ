@@ -13,8 +13,12 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
-    return 0;
+    Quaternion test = new Quaternion(1,1,1,1);
+
+    Quaternion test2 = new Quaternion(2,2,2,2);
+
+    Quaternion test3 = test.somme(test2);
+
 }
 
 

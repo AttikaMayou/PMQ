@@ -11,7 +11,7 @@ class Quaternion
         Quaternion& operator+(Quaternion q2);
         Quaternion& operator*(Quaternion q2);
         Quaternion& operator*(float a);
-        Quaternion somme(Quaternion q, Quaternion q2);
+        Quaternion somme(Quaternion q);
 
         float GetX();
         float GetY();

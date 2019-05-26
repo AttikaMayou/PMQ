@@ -1,8 +1,13 @@
 #include "Quaternion.h"
 
-Quaternion::Quaternion()
+Quaternion::Quaternion(float x, float y, float z, float w)
 {
-    //ctor
+
+    x = x;
+    y = y;
+    z = z;
+    w = w;
+
 }
 
 Quaternion::~Quaternion()
@@ -42,45 +47,43 @@ Quaternion::SetW(float MaValeur){
 
 }
 
-Quaternion::GetX(float MaValeur){
+Quaternion::GetX(){
 
     return x;
 
 }
 
-Quaternion::GetY(float MaValeur){
+Quaternion::GetY(){
 
     return y;
 
 }
 
-Quaternion::GetZ(float MaValeur){
+Quaternion::GetZ(){
 
     return z;
 
 }
 
-Quaternion::GetW(float MaValeur){
+Quaternion::GetW(){
 
     return w;
 
 }
 
 
-Quaternion somme(Quaternion q, Quaternion q2) {
+Quaternion somme(Quaternion q) {
 
     float newX;
     float newY;
     float newZ;
     float newW;
 
-    newX = q.GetX() + q2.GetX();
-    newY = q.GetY() + q2.GetY();
-    newZ = q.GetZ() + q2.GetZ();
-    newW = q.GetW() + q2.GetW();
+    newX = x + q.GetX();
+    newY = y + q.GetY();
+    newZ = z + q.GetZ();
+    newW = w + q.GetW();
 
-    return new Quaternion();
-
-
+    return new Quaternion(newX, newY, newZ, newW);
 
 }
