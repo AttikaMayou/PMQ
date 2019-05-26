@@ -5,7 +5,7 @@
 class Quaternion
 {
     public:
-        Quaternion();
+        Quaternion(float x, float y, float z, float w);
         virtual ~Quaternion();
 
         Quaternion& operator+(Quaternion q2);

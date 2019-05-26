@@ -9,3 +9,9 @@ Quaternion::~Quaternion()
 {
     //dtor
 }
+
+//operation de multiplication par un réel
+Quaternion::operator*(float a)
+{
+
+}
