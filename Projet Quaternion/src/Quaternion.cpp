@@ -14,14 +14,6 @@ Quaternion::~Quaternion()
     //dtor
 }
 
-//operation de multiplication par un r�el
-/*Quaternion& Quaternion::operator*(float a)
-{
-    Quaternion q(GetX() * a, GetY() * a, GetZ() * a, GetW() * a);
-    return q;
-}*/
-
-
 Quaternion& Quaternion::operator*(Quaternion q2)
 {
     float newX(0.0);
@@ -109,16 +101,30 @@ void Quaternion::displayQuaternion() const
 
 Quaternion& Quaternion::operator+=(const Quaternion& a)
 {
-
-
     m_x = m_x + a.m_x;
     m_y = m_y + a.m_y;
     m_z = m_z + a.m_z;
     m_w = m_w + a.m_w;
 
     return *this;
+}
 
+Quaternion& Quaternion::operator*=(const float& a)
+{
+    m_x = m_x*a;
+    m_y = m_y*a;
+    m_z = m_z*a;
+    m_w = m_w*a;
 
+    return *this;
+}
+
+//operation de multiplication par un r�el
+Quaternion operator*(Quaternion const& a, const float& b)
+{
+    Quaternion copie(a);
+    copie*=b;
+    return copie;
 }
 
 Quaternion operator+(Quaternion const& a, Quaternion const& b)

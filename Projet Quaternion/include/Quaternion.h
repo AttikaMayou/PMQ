@@ -10,7 +10,7 @@ class Quaternion
 
         Quaternion& operator+=(const Quaternion &a);
         Quaternion& operator*(Quaternion q2);
-        Quaternion& operator*(float a);
+        Quaternion& operator*=(const float& a);
         Quaternion somme(Quaternion q);
 
         float GetX();
@@ -33,7 +33,7 @@ class Quaternion
 };
 
 Quaternion operator+(Quaternion const& a, Quaternion const& b);
-
+Quaternion operator*(Quaternion const& a, float& b);
 
 
 #endif // QUATERNION_H
