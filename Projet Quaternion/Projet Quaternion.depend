@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1559295795 source:d:\3esgi\maths-opengl\pmq\projet quaternion\main.cpp
+	<iostream>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Quaternion.h"
+
+1559296521 d:\3esgi\maths-opengl\pmq\projet quaternion\include\quaternion.h
+
