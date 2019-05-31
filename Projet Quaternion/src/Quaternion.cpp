@@ -15,17 +15,12 @@ Quaternion::~Quaternion()
 }
 
 //operation de multiplication par un r�el
-Quaternion& Quaternion::operator*(float a)
+/*Quaternion& Quaternion::operator*(float a)
 {
     Quaternion q(GetX() * a, GetY() * a, GetZ() * a, GetW() * a);
     return q;
-}
+}*/
 
-Quaternion& Quaternion::operator+(Quaternion q2)
-{
-    Quaternion q(1.0, 1.0, 1.0, 1.0);
-    return q;
-}
 
 Quaternion& Quaternion::operator*(Quaternion q2)
 {
@@ -100,4 +95,28 @@ Quaternion Quaternion::somme(Quaternion q) {
 void Quaternion::displayQuaternion() const
 {
     cout << "( " << m_x << ", " << m_y << ", " << m_z << ", " << m_w << ")" << endl;
+}
+
+Quaternion& Quaternion::operator+=(const Quaternion& a)
+{
+
+
+    m_x = m_x + a.m_x;
+    m_y = m_y + a.m_y;
+    m_z = m_z + a.m_z;
+    m_w = m_w + a.m_w;
+
+    return *this;
+
+
+}
+
+Quaternion operator+(Quaternion const& a, Quaternion const& b)
+{
+
+
+    Quaternion copie(a);
+    copie += b;
+    return copie;
+
 }

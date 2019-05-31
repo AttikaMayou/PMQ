@@ -11,3 +11,15 @@
 	"Quaternion.h"
 	<iostream>
 
+1559303919 source:c:\users\nelson\documents\math\quaternionproject\pmq\projet quaternion\main.cpp
+	<iostream>
+	<GL/gl.h>
+	<GL/glu.h>
+	"Quaternion.h"
+
+1559312242 c:\users\nelson\documents\math\quaternionproject\pmq\projet quaternion\include\quaternion.h
+
+1559299262 source:c:\users\nelson\documents\math\quaternionproject\pmq\projet quaternion\src\quaternion.cpp
+	"Quaternion.h"
+	<iostream>
+
