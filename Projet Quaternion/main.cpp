@@ -13,9 +13,9 @@ using namespace std;
 
 int main()
 {
-    Quaternion test = new Quaternion(1,1,1,1);
+    Quaternion test = new Quaternion(1.0,1.0,1.0,1.0);
 
-    Quaternion test2 = new Quaternion(2,2,2,2);
+    Quaternion test2 = new Quaternion(2.0,2.0,2.0,2.0);
 
     Quaternion test3 = test.somme(test2);
 

@@ -1,12 +1,7 @@
 #include "Quaternion.h"
 
-Quaternion::Quaternion(float x, float y, float z, float w)
+Quaternion::Quaternion(float x, float y, float z, float w) : m_x(x), m_y(y), m_z(z), m_w(w)
 {
-
-    x = x;
-    y = y;
-    z = z;
-    w = w;
 
 }
 
@@ -16,63 +11,73 @@ Quaternion::~Quaternion()
 }
 
 //operation de multiplication par un r�el
-Quaternion::operator*(float a)
+Quaternion::Quaternion operator*(float a)
 {
+    return new Quaternion(1.0, 1.0, 1.0, 1.0);
+}
 
+Quaternion::Quaternion operator+(Quaternion q2)
+{
+    return new Quaternion(1.0, 1.0, 1.0, 1.0);
+}
+
+Quaternion::Quaternion operator*(Quaternion q2)
+{
+    return new Quaternion(1.0, 1.0, 1.0, 1.0);
 }
 
 
-Quaternion::SetX(float MaValeur){
+void Quaternion::SetX(float MaValeur){
 
     x = MaValeur;
 
 }
 
 
-Quaternion::SetY(float MaValeur){
+void Quaternion::SetY(float MaValeur){
 
     y = MaValeur;
 
 }
 
-Quaternion::SetZ(float MaValeur){
+void Quaternion::SetZ(float MaValeur){
 
-    z = MaValeur;
+    m_z = MaValeur;
 
 }
 
-Quaternion::SetW(float MaValeur){
+void Quaternion::SetW(float MaValeur){
 
     w = MaValeur;
 
 }
 
-Quaternion::GetX(){
+float Quaternion::GetX(){
 
     return x;
 
 }
 
-Quaternion::GetY(){
+float Quaternion::GetY(){
 
     return y;
 
 }
 
-Quaternion::GetZ(){
+float Quaternion::GetZ(){
 
     return z;
 
 }
 
-Quaternion::GetW(){
+float Quaternion::GetW(){
 
     return w;
 
 }
 
 
-Quaternion somme(Quaternion q) {
+Quaternion::Quaternion somme(Quaternion q) {
 
     float newX;
     float newY;
@@ -85,5 +90,4 @@ Quaternion somme(Quaternion q) {
     newW = w + q.GetW();
 
     return new Quaternion(newX, newY, newZ, newW);
-
 }
