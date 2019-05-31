@@ -8,9 +8,10 @@ class Quaternion
         virtual ~Quaternion();
 
         Quaternion& operator+(Quaternion q2);
-        Quaternion& operator*(Quaternion q2);
+        Quaternion operator*(Quaternion const& q, Quaternion const& q2);
         Quaternion& operator*(float a);
         Quaternion somme(Quaternion q);
+        void multiply(Quaternion q);
 
         float GetX();
         float GetY();

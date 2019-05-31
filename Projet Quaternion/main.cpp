@@ -27,7 +27,8 @@ int main()
 
     test3.displayQuaternion();
 
-    Quaternion test4 = test * test2;
+    Quaternion test4;
+    test4 = test * test2;
 
     test4.displayQuaternion();
 }
