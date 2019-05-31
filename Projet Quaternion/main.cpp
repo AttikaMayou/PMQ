@@ -26,6 +26,10 @@ int main()
     Quaternion test3 = test.somme(test2);
 
     test3.displayQuaternion();
+
+    Quaternion test4 = test * test2;
+
+    test4.displayQuaternion();
 }
 
 

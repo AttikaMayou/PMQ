@@ -29,8 +29,18 @@ Quaternion& Quaternion::operator+(Quaternion q2)
 
 Quaternion& Quaternion::operator*(Quaternion q2)
 {
-    Quaternion q(1.0, 1.0, 1.0, 1.0);
-    return q;
+    float newX(0.0);
+    float newY(0.0);
+    float newZ(0.0);
+    float newW(0.0);
+
+    newX = GetX() * q2.GetX() - GetY() * q2.GetY() - GetZ() * q2.GetZ() - GetW() * q2.GetW();
+    newY = GetX() * q2.GetY() + GetY() * q2.GetX() + GetZ() * q2.GetW() - GetW() * q2.GetZ();
+    newZ = GetX() * q2.GetZ() + GetY() * q2.GetX() - GetZ() * q2.GetW() + GetW() * q2.GetY();
+    newW = GetX() * q2.GetW() + GetY() * q2.GetX() + GetZ() * q2.GetZ() - GetW() * q2.GetY();
+
+    Quaternion result(newX, newY, newZ, newW);
+    return result;
 }
 
 void Quaternion::SetX(float MaValeur){
