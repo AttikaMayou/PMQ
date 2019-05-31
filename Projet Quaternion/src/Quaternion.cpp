@@ -13,7 +13,7 @@ Quaternion::~Quaternion()
 //operation de multiplication par un r�el
 Quaternion::Quaternion operator*(float a)
 {
-    return new Quaternion(1.0, 1.0, 1.0, 1.0);
+    return new Quaternion(GetX() * a, GetY() * a, GetZ() * a, GetW() * a);
 }
 
 Quaternion::Quaternion operator+(Quaternion q2)
