@@ -11,32 +11,33 @@ Quaternion::~Quaternion()
 }
 
 //operation de multiplication par un r�el
-Quaternion::Quaternion operator*(float a)
+Quaternion& Quaternion::operator*(float a)
 {
-    return new Quaternion(GetX() * a, GetY() * a, GetZ() * a, GetW() * a);
+    Quaternion q(GetX() * a, GetY() * a, GetZ() * a, GetW() * a);
+    return q;
 }
 
-Quaternion::Quaternion operator+(Quaternion q2)
+Quaternion& Quaternion::operator+(Quaternion q2)
 {
-    return new Quaternion(1.0, 1.0, 1.0, 1.0);
+    Quaternion q(1.0, 1.0, 1.0, 1.0);
+    return q;
 }
 
-Quaternion::Quaternion operator*(Quaternion q2)
+Quaternion& Quaternion::operator*(Quaternion q2)
 {
-    return new Quaternion(1.0, 1.0, 1.0, 1.0);
+    Quaternion q(1.0, 1.0, 1.0, 1.0);
+    return q;
 }
-
 
 void Quaternion::SetX(float MaValeur){
 
-    x = MaValeur;
+    m_x = MaValeur;
 
 }
 
-
 void Quaternion::SetY(float MaValeur){
 
-    y = MaValeur;
+    m_y = MaValeur;
 
 }
 
@@ -48,46 +49,46 @@ void Quaternion::SetZ(float MaValeur){
 
 void Quaternion::SetW(float MaValeur){
 
-    w = MaValeur;
+    m_w = MaValeur;
 
 }
 
 float Quaternion::GetX(){
 
-    return x;
+    return m_x;
 
 }
 
 float Quaternion::GetY(){
 
-    return y;
+    return m_y;
 
 }
 
 float Quaternion::GetZ(){
 
-    return z;
+    return m_z;
 
 }
 
 float Quaternion::GetW(){
 
-    return w;
+    return m_w;
 
 }
 
+Quaternion Quaternion::somme(Quaternion q) {
 
-Quaternion::Quaternion somme(Quaternion q) {
+    float newX(0.0);
+    float newY(0.0);
+    float newZ(0.0);
+    float newW(0.0);
 
-    float newX;
-    float newY;
-    float newZ;
-    float newW;
+    newX = GetX() + q.GetX();
+    newY = GetX() + q.GetY();
+    newZ = GetZ() + q.GetZ();
+    newW = GetW() + q.GetW();
 
-    newX = x + q.GetX();
-    newY = y + q.GetY();
-    newZ = z + q.GetZ();
-    newW = w + q.GetW();
-
-    return new Quaternion(newX, newY, newZ, newW);
+    Quaternion result(newX, newY, newZ, newW);
+    return result;
 }
