@@ -21,6 +21,8 @@ class Quaternion
         void SetZ(float MaValeur);
         void SetW(float MaValeur);
 
+        void displayQuaternion() const;
+
     protected:
     private:
         float m_x;

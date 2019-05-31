@@ -1,5 +1,9 @@
 #include "Quaternion.h"
 
+using namespace std;
+
+#include <iostream>
+
 Quaternion::Quaternion(float x, float y, float z, float w) : m_x(x), m_y(y), m_z(z), m_w(w)
 {
 
@@ -91,4 +95,9 @@ Quaternion Quaternion::somme(Quaternion q) {
 
     Quaternion result(newX, newY, newZ, newW);
     return result;
+}
+
+void Quaternion::displayQuaternion() const
+{
+    cout << "( " << m_x << ", " << m_y << ", " << m_z << ", " << m_w << ")" << endl;
 }
