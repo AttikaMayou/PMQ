@@ -17,17 +17,17 @@ class Quaternion
         float GetY();
         float GetZ();
         float GetW();
-        void SetX();
-        void SetY();
-        void SetZ();
-        void SetW();
+        void SetX(float MaValeur);
+        void SetY(float MaValeur);
+        void SetZ(float MaValeur);
+        void SetW(float MaValeur);
 
     protected:
     private:
-        float x;
-        float y;
-        float z;
-        float w;
+        float m_x;
+        float m_y;
+        float m_z;
+        float m_w;
 };
 
 #endif // QUATERNION_H
