@@ -14,14 +14,20 @@ Quaternion::~Quaternion()
     //dtor
 }
 
-//operation de multiplication par un r�el
-Quaternion& Quaternion::operator*(float a)
+void Quaternion::operator+=(const Quaternion& a)
 {
-    Quaternion q(GetX() * a, GetY() * a, GetZ() * a, GetW() * a);
-    return q;
+    m_x += a.GetX();
+
 }
 
-Quaternion& Quaternion::operator+(Quaternion q2)
+//operation de multiplication par un reel
+Quaternion operator*(Quaternion const& q, float a)
+{
+    Quaternion result(q.GetX() * a, q.GetY() * a, q.GetZ() * a, q.GetW() * a);
+    return result;
+}
+
+Quaternion operator+(Quaternion const& q2)
 {
     Quaternion q(1.0, 1.0, 1.0, 1.0);
     return q;
@@ -98,12 +104,36 @@ Quaternion Quaternion::somme(Quaternion q) {
     return result;
 }
 
-void Quaternion::multiply(Quaternion q2)
+Quaternion Quaternion::multiply(Quaternion q2)
 {
-    m_x = (GetX() * q2.GetX()) - (GetY() * q2.GetY()) - (GetZ() * q2.GetZ()) - (GetW() * q2.GetW());
-    m_y = (GetX() * q2.GetY()) + (GetY() * q2.GetX()) + (GetZ() * q2.GetW()) - (GetW() * q2.GetZ());
-    m_z = (GetX() * q2.GetZ()) + (GetZ() * q2.GetX()) - (GetY() * q2.GetW()) + (GetW() * q2.GetY());
-    m_w = (GetX() * q2.GetW()) + (GetW() * q2.GetX()) + (GetY() * q2.GetZ()) - (GetZ() * q2.GetY());
+    float newX(0.0);
+    float newY(0.0);
+    float newZ(0.0);
+    float newW(0.0);
+
+    newX = (GetX() * q2.GetX()) - (GetY() * q2.GetY()) - (GetZ() * q2.GetZ()) - (GetW() * q2.GetW());
+    newY = (GetX() * q2.GetY()) + (GetY() * q2.GetX()) + (GetZ() * q2.GetW()) - (GetW() * q2.GetZ());
+    newZ = (GetX() * q2.GetZ()) + (GetZ() * q2.GetX()) - (GetY() * q2.GetW()) + (GetW() * q2.GetY());
+    newW = (GetX() * q2.GetW()) + (GetW() * q2.GetX()) + (GetY() * q2.GetZ()) - (GetZ() * q2.GetY());
+
+    Quaternion result(newX, newY, newZ, newW);
+    return result;
+}
+
+Quaternion Quaternion::multiply(float a)
+{
+    float newX(0.0);
+    float newY(0.0);
+    float newZ(0.0);
+    float newW(0.0);
+
+    newX = (GetX() * q2.GetX()) - (GetY() * q2.GetY()) - (GetZ() * q2.GetZ()) - (GetW() * q2.GetW());
+    newY = (GetX() * q2.GetY()) + (GetY() * q2.GetX()) + (GetZ() * q2.GetW()) - (GetW() * q2.GetZ());
+    newZ = (GetX() * q2.GetZ()) + (GetZ() * q2.GetX()) - (GetY() * q2.GetW()) + (GetW() * q2.GetY());
+    newW = (GetX() * q2.GetW()) + (GetW() * q2.GetX()) + (GetY() * q2.GetZ()) - (GetZ() * q2.GetY());
+
+    Quaternion result(newX, newY, newZ, newW);
+    return result;
 }
 
 void Quaternion::displayQuaternion() const

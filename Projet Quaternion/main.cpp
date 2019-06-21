@@ -23,12 +23,13 @@ int main()
 
     test2.displayQuaternion();
 
-    Quaternion test3 = test.somme(test2);
+    Quaternion test3(0.0, 0.0, 0.0, 0.0);
+    //test3 = test.somme(test2);
 
     test3.displayQuaternion();
 
-    Quaternion test4;
-    test4 = test * test2;
+    Quaternion test4(0.0, 0.0, 0.0, 0.0);
+    //test4 = test * test2;
 
     test4.displayQuaternion();
 }

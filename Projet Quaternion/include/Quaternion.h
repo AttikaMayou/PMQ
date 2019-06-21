@@ -7,12 +7,10 @@ class Quaternion
         Quaternion(float x, float y, float z, float w);
         virtual ~Quaternion();
 
-        Quaternion operator+(Quaternion const& q, Quaternion const& q2);
-        Quaternion operator*(Quaternion const& q, Quaternion const& q2);
-        Quaternion operator*(Quaternion const& q, float a);
-        void somme(Quaternion q);
-        void multiply(Quaternion q);
-        void multiply(float a);
+        void operator+=(Quaternion const& a);
+        Quaternion somme(Quaternion q);
+        Quaternion multiply(Quaternion q);
+        Quaternion multiply(float a);
 
         float GetX();
         float GetY();
@@ -33,6 +31,9 @@ class Quaternion
         float m_w;
 };
 
+Quaternion operator+(Quaternion const& q, Quaternion const& q2);
+Quaternion operator*(Quaternion const& q, Quaternion const& q2);
+Quaternion operator*(Quaternion const& q, float a);
 bool operator==(Quaternion const& a, Quaternion const& b);
 
 #endif // QUATERNION_H
