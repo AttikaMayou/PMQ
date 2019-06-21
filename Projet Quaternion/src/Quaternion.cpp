@@ -110,3 +110,8 @@ void Quaternion::displayQuaternion() const
 {
     cout << "( " << m_x << ", " << m_y << ", " << m_z << ", " << m_w << ")" << endl;
 }
+
+bool operator==(Quaternion const& a, Quaternion const& b)
+{
+    return (a.GetX() == b.GetX() && a.GetY() == b.GetY() && a.GetZ() == b.GetZ() && a.GetW() == b.GetW());
+}
