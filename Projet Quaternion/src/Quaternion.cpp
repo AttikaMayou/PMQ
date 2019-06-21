@@ -14,6 +14,12 @@ Quaternion::~Quaternion()
     //dtor
 }
 
+Quaternion Quaternion::GetConjuge()
+{
+    Quaternion result(GetX(), -GetY(), -GetZ(), -GetW());
+    return result;
+}
+
 Quaternion& Quaternion::operator*(Quaternion q2)
 {
     float newX(0.0);

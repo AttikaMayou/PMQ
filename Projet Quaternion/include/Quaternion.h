@@ -6,7 +6,7 @@ class Quaternion
     public:
         Quaternion(float x, float y, float z, float w);
         virtual ~Quaternion();
-
+        Quaternion GetConjuge();
 
         Quaternion& operator+=(const Quaternion &a);
         Quaternion& operator*(Quaternion q2);

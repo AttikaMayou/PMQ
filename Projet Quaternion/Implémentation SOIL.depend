@@ -181,7 +181,7 @@
 1558868722 source:c:\users\régis\desktop\esgi\3eme annee\maths\projet quaternion\pmq\projet quaternion\src\block.cpp
 	"Block.h"
 
-1558868721 c:\users\régis\desktop\esgi\3eme annee\maths\projet quaternion\pmq\projet quaternion\include\block.h
+1561125925 c:\users\régis\desktop\esgi\3eme annee\maths\projet quaternion\pmq\projet quaternion\include\block.h
 	<GL/gl.h>
 	<GL/glu.h>
 	"glut.h"
@@ -219,4 +219,10 @@
 1558868722 source:c:\users\régis\desktop\esgi\3eme annee\maths\projet quaternion\pmq\projet quaternion\src\map.cpp
 	"Map.h"
 	"Block.h"
+
+1561130154 source:c:\users\régis\desktop\esgi\3eme annee\maths\projet quaternion\pmq\projet quaternion\src\quaternion.cpp
+	"Quaternion.h"
+	<iostream>
+
+1561130154 c:\users\régis\desktop\esgi\3eme annee\maths\projet quaternion\pmq\projet quaternion\include\quaternion.h
 
