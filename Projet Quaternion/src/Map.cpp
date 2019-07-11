@@ -1,5 +1,6 @@
 #include "Map.h"
 #include "Block.h"
+#include "testQuaternion.h"
 
 #define GL_CLAMP_TO_EDGE 0x812F
 #define SKY_DISTANCE 200.0f
@@ -46,6 +47,8 @@ void Map::DrawGround()
 {
     Block *b = new Block(2.0f, 2.0f, 2.0f);
 
+    TestQuaternion *test = new TestQuaternion();
+
     glEnable(GL_TEXTURE_2D);
     glColor3f(1.0f, 1.0f, 1.0f);
     glBindTexture(GL_TEXTURE_2D, ListeTextures[11]);
@@ -73,6 +76,8 @@ void Map::DrawGround()
     b->SetTexture(LEFT, ListeTextures[9]);
     b->SetTexture(SPHERE, ListeTextures[19]);
     b->Draw();
+
+    test->Draw();
 }
 
 void Map::DrawSkybox(Camera *cam)
