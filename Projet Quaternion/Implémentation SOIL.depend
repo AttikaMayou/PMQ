@@ -264,7 +264,7 @@
 	"SOIL.h"
 	"Camera.h"
 
-1562871221 source:c:\esgi\projet maths\quaternion\pmq\projet quaternion\src\map.cpp
+1563151644 source:c:\esgi\projet maths\quaternion\pmq\projet quaternion\src\map.cpp
 	"Map.h"
 	"Block.h"
 	"testQuaternion.h"
@@ -275,13 +275,15 @@
 
 1562696971 c:\esgi\projet maths\quaternion\pmq\projet quaternion\include\quaternion.h
 
-1562871095 source:c:\esgi\projet maths\quaternion\pmq\projet quaternion\src\testquaternion.cpp
+1563155234 source:c:\esgi\projet maths\quaternion\pmq\projet quaternion\src\testquaternion.cpp
 	"testQuaternion.h"
+	"math.h"
 	<iostream>
 
-1562872165 c:\esgi\projet maths\quaternion\pmq\projet quaternion\include\testquaternion.h
+1563155234 c:\esgi\projet maths\quaternion\pmq\projet quaternion\include\testquaternion.h
 	<GL/gl.h>
 	<GL/glu.h>
+	"Quaternion.h"
 	"glut.h"
 	"SOIL.h"
 

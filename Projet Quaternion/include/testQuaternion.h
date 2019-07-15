@@ -3,6 +3,7 @@
 
 #include <GL/gl.h>
 #include <GL/glu.h>
+#include "Quaternion.h"
 
 #include "glut.h"
 #include "SOIL.h"
@@ -32,9 +33,6 @@ class TestQuaternion
 
         float longueur;
 
-        //points
-        float points[][3];
-
         TestQuaternion();
         TestQuaternion(float x, float y, float z, float longueur);
         virtual ~TestQuaternion();
@@ -43,7 +41,9 @@ class TestQuaternion
 
     private:
         GLuint textures[6];
-        char anchor[3];
 };
 
+Quaternion GetQuaternionRotation(float angle, float axeX, float axeY, float axeZ);
+
+Quaternion Rotate(Quaternion quaterRotate, Quaternion positionPoint);
 #endif // TESTQUATERNION_H

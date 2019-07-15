@@ -47,7 +47,7 @@ void Map::DrawGround()
 {
     Block *b = new Block(2.0f, 2.0f, 2.0f);
 
-    TestQuaternion *test = new TestQuaternion();
+    TestQuaternion *test = new TestQuaternion(3.0f, 4.0f, 5.0f, 2.0f);
 
     glEnable(GL_TEXTURE_2D);
     glColor3f(1.0f, 1.0f, 1.0f);
