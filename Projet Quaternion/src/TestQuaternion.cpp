@@ -62,25 +62,25 @@ void TestQuaternion::Draw()
     glBegin(GL_QUADS);
         glTexCoord2f(0.0f, 0.0f);
 
-        Quaternion quaterRotate = GetQuaternionRotation(positionX, positionY, positionZ, 3.14/6);
+        Quaternion quaterRotate = GetQuaternionRotation(positionX, positionY, positionZ, glutGet(GLUT_ELAPSED_TIME) / 1800.0f);
         Quaternion result = Rotate(quaterRotate, Quaternion(positionX, positionY, positionZ, 0));
 
         glVertex3f(result.GetX(), result.GetY(), result.GetZ());
         glTexCoord2f(0.0f, longueur/TEXTURE_SCALE);
 
-        Quaternion quaterRotate1 = GetQuaternionRotation(positionX, positionY + longueur, positionZ, 3.14/6);
+        Quaternion quaterRotate1 = GetQuaternionRotation(positionX, positionY + longueur, positionZ, glutGet(GLUT_ELAPSED_TIME) / 1800.0f);
         Quaternion result1 = Rotate(quaterRotate, Quaternion(positionX, positionY + longueur, positionZ, 0));
 
         glVertex3f(result1.GetX(), result1.GetY(), result1.GetZ());
         glTexCoord2f(longueur/TEXTURE_SCALE, longueur/TEXTURE_SCALE);
 
-        Quaternion quaterRotate2 = GetQuaternionRotation(positionX + longueur, positionY + longueur, positionZ, 3.14/6);
+        Quaternion quaterRotate2 = GetQuaternionRotation(positionX + longueur, positionY + longueur, positionZ, glutGet(GLUT_ELAPSED_TIME) / 1800.0f);
         Quaternion result2 = Rotate(quaterRotate, Quaternion(positionX + longueur, positionY + longueur, positionZ, 0));
 
         glVertex3f(result2.GetX(), result2.GetY(), result2.GetZ());
         glTexCoord2f(longueur/TEXTURE_SCALE, 0.0f);
 
-        Quaternion quaterRotate3 = GetQuaternionRotation(positionX + longueur, positionY, positionZ, 3.14/6);
+        Quaternion quaterRotate3 = GetQuaternionRotation(positionX + longueur, positionY, positionZ, glutGet(GLUT_ELAPSED_TIME) / 1800.0f);
         Quaternion result3 = Rotate(quaterRotate, Quaternion(positionX + longueur, positionY, positionZ, 0));
 
         glVertex3f(result3.GetX(), result3.GetY(), result3.GetZ());
